@@ -20,7 +20,19 @@
 %-----------------------------------------------------------------------------
 
 
-\documentclass{sigplanconf}
+\documentclass[sigconf]{acmart}
+\input{preamble}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+    
+\setcopyright{acmcopyright}
+\copyrightyear{2021}
+\acmYear{2021}
+\acmDOI{10.1145/1122445.1122456}
+
+\acmConference[SBLP '21]{SBLP '21: XXV Brazilian Symposium on Programming Languages}{Joinville, Brazil}
 
 % The following \documentclass options may be useful:
 
@@ -29,44 +41,39 @@
 % 11pt          To set in 11-point type instead of 9-point.
 % authoryear    To obtain author/year citation style instead of numeric.
 
-\usepackage{amsmath}
+%\usepackage{amsmath}
 
 
 \begin{document}
 
-\special{papersize=8.5in,11in}
-\setlength{\pdfpageheight}{\paperheight}
-\setlength{\pdfpagewidth}{\paperwidth}
+%\begin{frontmatter}
 
-\conferenceinfo{CONF 'yy}{Month d--d, 20yy, City, ST, Country} 
-\copyrightyear{20yy} 
-\copyrightdata{978-1-nnnn-nnnn-n/yy/mm} 
-\doi{nnnnnnn.nnnnnnn}
+\title{An Expressive and Modular Layer Activation Mechanism\\for Context-Oriented Programming}
+%\titlerunning{ }
 
-% Uncomment one of the following two, if you are not going for the 
-% traditional copyright transfer agreement.
+\author{Paul Leger}
+%\address{Escuela de Ingenier\'ia, Universidad Cat\'olica del Norte, Chile}
+\orcid{0000-0003-0969-5139}
+\affiliation{%
+  \institution{Universidad Cat\'olica del Norte}
+  %\streetaddress{P.O. Box 1212}
+  \city{Coquimbo}
+  %\state{Ohio}
+  \country{Chile}
+  %\postcode{43017-6221}
+}
+\email{pleger@ucn.cl}
 
-%\exclusivelicense                % ACM gets exclusive license to publish, 
-                                  % you retain copyright
+\author{Nicol\'as Cardozo}
+%\address{Systems and Computing Engineering Department, Universidad de los Andes, Colombia}
+\affiliation{%
+  \institution{Universidad de los Andes}
+%  \streetaddress{1 Th{\o}rv{\"a}ld Circle}
+  \city{Bogot\'a}
+  \country{Colombia}}
+\email{n.cardozo@uniandes.edu.co}
 
-%\permissiontopublish             % ACM gets nonexclusive license to publish
-                                  % (paid open-access papers, 
-                                  % short abstracts)
-
-\titlebanner{banner above paper title}        % These are ignored unless
-\preprintfooter{short description of paper}   % 'preprint' option specified.
-
-\title{Title Text}
-\subtitle{Subtitle Text, if any}
-
-\authorinfo{Name1}
-           {Affiliation1}
-           {Email1}
-\authorinfo{Name2\and Name3}
-           {Affiliation2/3}
-           {Email2/3}
-
-\maketitle
+\renewcommand{\shortauthors}{Leger and Cardozo}
 
 \begin{abstract}
 This is the text of the abstract.
@@ -270,17 +277,9 @@ Acknowledgments, if needed.
 
 % We recommend abbrvnat bibliography style.
 
-\bibliographystyle{abbrvnat}
-
-% The bibliography should be embedded for final submission.
-
-\begin{thebibliography}{}
-\softraggedright
-
-\bibitem[Smith et~al.(2009)Smith, Jones]{smith02}
-P. Q. Smith, and X. Y. Jones. ...reference text...
-
-\end{thebibliography}
+\bibliographystyle{ACM-Reference-Format}
+%\biboptions{sort&compress}
+\bibliography{bib/stackage}
 
 
 \end{document}
